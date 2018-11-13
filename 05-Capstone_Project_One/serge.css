@@ -1,0 +1,35 @@
+
+body{
+  font-family: 'Montserrat';
+  color: #FDFFFC;
+  text-align: center;
+  background-color: #011627;
+  border: 60px solid #2EC4B6;
+  border-top: 0px;
+  /*border-bottom: 0px;*/
+  margin: 0px;
+}
+
+p{
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+/* label{
+  text-align: center;
+  color: white;
+} */
+
+/* .UserInfo{
+  margin: auto;
+} */
+
+#Submit{
+  border-radius: 25px;
+  background: #FF9F1C;
+  height: 80px;
+  width: 150px;
+  font-family: "Montserrat";
+  font-size: 1.2em;
+  margin-bottom: 4px;
+}
