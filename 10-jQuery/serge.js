@@ -16,4 +16,3 @@ function setColor(){
     console.log($(this).closest("td").index());
     console.log($(this).closest("tr").index());
 }
-this is a test ... try to commit
