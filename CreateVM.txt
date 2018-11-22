@@ -1,34 +1,63 @@
-LECTURE 116
+LECTURE 116 and on
 //////////////////////////////////////
-//How to create a Virtual Environmemt
+//How to create a Virtual Environmemt called MyVirtualEnv
 /////////////////////////////////////
 - https://docs.python.org/3/tutorial/venv.html
-- >python -m venv tutorial-env
+- >python -m venv MyVirtualEnv
 
 //////////////////////////////////////
-//Start a Virtual Environment
+//Start a Virtual Environment MyVirtualEnv
 /////////////////////////////////////
-
-- >cd tutorial-env
-- >.\Scripts\activate.bat
+- >go under the MyVirtualEnv folder\Scripts and call
+- >activate.bat
 - Install what you need in it
 -           > pip install Django
+-           > pip install AnyOtherPackageYouNeed
 
 //////////////////////////////////////
-//Diactivate a Virtual Environment
+//Diactivate a Virtual Environment called MyVirtualEnv
 /////////////////////////////////////
-- >.\Scripts\deactivate.bat
+- go to the MyVirtualEnv folder\Scripts and call
+- >deactivate.bat
 
 
 //////////////////////////////////////
-//Start the Virtual Server
+//Start the Virtual Server for your MyProject
 /////////////////////////////////////
--go under the first_project folder
+-go under the MyProject folder
 - > python manage.py runserver
 
 //////////////////////////////////////
-//Create a new project in this environment
+//Create a new project in this environment call MyProject
 /////////////////////////////////////
 - activate the Virtual Envirionment
 - >cd WhereYouWantTheProjectToBeCreated
-- django-admin startproject first_project
+- django-admin startproject MyProject
+
+//////////////////////////////////////
+//Create a new application
+/////////////////////////////////////
+- go in the project folder where you find manage.py and execute
+-     > python manage.py startapp MyNewApp
+- in MyProject/urls.py, Add
+    from django.urls import path
+    from django.conf.urls import include
+    from MyNewApp import views                              #tell your site how to get the view of your new application
+
+    urlpatterns = [
+        path(r'',views.index, name='index'),                #default page for the entire website
+        path('MyNewApp/', include('MyNewApp.urls')),        #the url for your application
+        path('admin/', admin.site.urls),                    #the url for the administrator page if you have
+    ]
+
+- in MyProject/setting.py
+        inside the INSTALLED_APPS = [ ...,
+         'MyNewApp',                                      #this tells the site that you have an application
+         ] add your application
+
+
+- in MyNewApp/views.py, Add
+    from django.http import HttpResponse
+
+    def index(request):
+        return HttpResponse("Your HTML or text")
