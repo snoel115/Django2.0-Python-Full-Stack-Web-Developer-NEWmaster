@@ -1,0 +1,27 @@
+/////////////////////////////////
+// Steps to set the system to use Django templates
+/////////////////////////////////
+- Under the main folder of your project, create a "templates" folder
+- in your mainFolder\ProjectName\settings.py add the following
+- insure the python os library is imported
+        import os
+
+- create a new template variable pointing to the new folder we just created
+       TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")   #this will define a new variable that we can use later on
+
+- tell Django about this new folder by adding it in the DIRS tuple
+       add TEMPLATE_DIR to the TEMPLATES tuple like
+          TEMPLATES = [
+              {
+                  'BACKEND': 'django.template.backends.django.DjangoTemplates',
+                  'DIRS': [TEMPLATE_DIR, ],
+                  'APP_DIRS': True,
+
+- create a new application folder under the "templates" folder
+- Create an index.html in the new templates folder and add the template code like {{ insert_me }} tag
+- in the views.py add the following
+      my_dict = {'insert_me': "Hello I am from first_app/index.html!!"}
+      return render(request, 'first_app/index.html', context=my_dict)
+
+      where "my_dict" is a directory containing the stuff to inject at the {{ insert_me }} Django tag of the template page
+      return the rendering result of the template + the injection

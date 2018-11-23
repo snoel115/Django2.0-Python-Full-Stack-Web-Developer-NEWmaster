@@ -55,6 +55,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'firstproject.urls'
 
+#snoel add TEMPLATE_DIR in the DIRS tuple
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
