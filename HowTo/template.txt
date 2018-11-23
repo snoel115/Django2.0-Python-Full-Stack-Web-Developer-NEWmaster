@@ -17,6 +17,9 @@
                   'DIRS': [TEMPLATE_DIR, ],
                   'APP_DIRS': True,
 
+- create your project own url.py under the application folder
+
+
 - create a new application folder under the "templates" folder
 - Create an index.html in the new templates folder and add the template code like {{ insert_me }} tag
 - in the views.py add the following
