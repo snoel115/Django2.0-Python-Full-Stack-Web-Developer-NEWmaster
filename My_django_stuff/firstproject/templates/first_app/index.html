@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>First App</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css"%}">
   </head>
   <body>
-    <h1>Hello this index.html</h1>
+    <h1>My fist page with static image in the template section of the page</h1>
     <!--  add a template tag where you want insert your code-->
     {{ insert_me }}
+    <img src="{% static "images/1.png" %}" alt="oups I am unable to load the image">
     <h2>after</h2>
   </body>
 </html>

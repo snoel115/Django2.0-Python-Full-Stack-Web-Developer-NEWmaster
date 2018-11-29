@@ -15,8 +15,10 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#snoel add this new TEMPLATE_DIR variable
+#snoel add this new TEMPLATE_DIR variable ====================
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+#=============================================================
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,6 +35,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+#snoel ============================
+# add your application name to this checklist
+#==================================
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,7 +60,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'firstproject.urls'
 
+#=====================================================
 #snoel add TEMPLATE_DIR in the DIRS tuple
+#=====================================================
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -123,3 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+#snoel add this list as we will have static stuff like images ============
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+#==========================================================================
