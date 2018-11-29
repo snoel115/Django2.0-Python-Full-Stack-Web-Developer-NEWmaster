@@ -30,4 +30,4 @@
       return the rendering result of the template + the injection
 
 
-toto
+toto - caca
