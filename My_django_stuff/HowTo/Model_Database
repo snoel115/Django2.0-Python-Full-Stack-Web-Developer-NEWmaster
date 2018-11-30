@@ -1,33 +1,52 @@
+******************************************************
 1 create your models
+******************************************************
 - go in your application and open models.py
 - create your models
 
-2 Generate your SQL
+******************************************************
+2 - Generate your SQL
+******************************************************
 - run the command >python manage.py migrate
 - run the command >python manage.py makemigrations yourApplication
 - run again the command >python manage.py migrate
 
-
+******************************************************
 3 - great fake data and the following steps
+******************************************************
 - run the command >python manage.py shell           #this will start python
 - run the command >>>from first_app.models import Topic
 - run the command >>>print(Topic.object.all())    #This will give you access to the model
 
+******************************************************
 4 - try to save some data
+******************************************************
 - t = Topic(top_name="Social Network")
 - t.save()
 - print(Topic.object.all())
 
+******************************************************
 5 - Get the database admin interface
+******************************************************
 - open admin.py from first_app
 - register your model
 
+******************************************************
 6 - Create a super user and test it
+******************************************************
 > python manage.py createsuperuser
-root
-snoel115@hotmail.com
-rlaru0343p
+    user = root
+    email = snoel115@hotmail.com
+    pwd = rlaru0343p
 > python manage.py runserver
 - go in the browser to http://127.0.0.1:8000/admin and log-in
-testuser1
-titoncaca01
+    user = testuser1
+    pwd = titoncaca01
+
+
+******************************************************
+7 - Populate the model with fake data
+https://faker.readthedocs.io/en/master/
+******************************************************
+- first, if not done already, install the faker library
+    > pip install Faker
