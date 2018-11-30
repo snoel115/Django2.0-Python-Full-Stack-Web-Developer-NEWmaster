@@ -1,43 +1,44 @@
 LECTURE 116 and on
 LECTURE 126
-//////////////////////////////////////
-//How to create a Virtual Environmemt called MyVirtualEnv
-/////////////////////////////////////
+******************************************************
+1 - How to create a Virtual Environmemt called MyVirtualEnv
+******************************************************
+
 - https://docs.python.org/3/tutorial/venv.html
 - >python -m venv MyVirtualEnv
 
-//////////////////////////////////////
-//Start a Virtual Environment MyVirtualEnv
-/////////////////////////////////////
+******************************************************
+2 - Start a Virtual Environment MyVirtualEnv
+******************************************************
 - >go under the MyVirtualEnv folder\Scripts and call
 - >activate.bat
 - Install what you need in it
 -           > pip install Django
 -           > pip install AnyOtherPackageYouNeed
 
-//////////////////////////////////////
-//Diactivate a Virtual Environment called MyVirtualEnv
-/////////////////////////////////////
+******************************************************
+3 - Deactivate a Virtual Environment called MyVirtualEnv
+******************************************************
 - go to the MyVirtualEnv folder\Scripts and call
 - >deactivate.bat
 
 
-//////////////////////////////////////
-//Start the Virtual Server for your MyProject
-/////////////////////////////////////
+******************************************************
+4 - Start the Virtual Server for your MyProject
+******************************************************
 -go under the MyProject folder
 - > python manage.py runserver
 
-//////////////////////////////////////
-//Create a new project in this environment call MyProject
-/////////////////////////////////////
+******************************************************
+5 - Create a new project in this environment call MyProject
+******************************************************
 - activate the Virtual Envirionment
 - >cd WhereYouWantTheProjectToBeCreated
 - django-admin startproject MyProject
 
-//////////////////////////////////////
-//Create a new application
-/////////////////////////////////////
+******************************************************
+6 - Create a new application
+******************************************************
 - go in the project folder where you find manage.py and execute
 -     > python manage.py startapp MyNewApp
 - in MyProject/urls.py, Add

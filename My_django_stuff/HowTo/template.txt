@@ -1,6 +1,6 @@
-/////////////////////////////////
-// Steps to set the system to use Django templates
-/////////////////////////////////
+******************************************************
+1 -  Steps to set the system to use Django templates
+******************************************************
 - Under the main folder of your project, create a "templates" folder
 - in your mainFolder\ProjectName\settings.py add the following
 - insure the python os library is imported
