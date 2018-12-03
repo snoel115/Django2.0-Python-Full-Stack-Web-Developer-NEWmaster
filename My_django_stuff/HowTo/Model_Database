@@ -15,15 +15,15 @@
 3 - great fake data and the following steps
 ******************************************************
 - run the command >python manage.py shell           #this will start python
-- run the command >>>from first_app.models import Topic
-- run the command >>>print(Topic.object.all())    #This will give you access to the model
+- run the command >>>from MyApp.models import Topic
+- run the command >>>print(MyTable.objects.all())    #This will give you access to the model
 
 ******************************************************
 4 - try to save some data
 ******************************************************
-- t = Topic(top_name="Social Network")
+- t = MyTable(field="enterAnything")
 - t.save()
-- print(Topic.object.all())
+- print(MyTable.objects.all())
 
 ******************************************************
 5 - Get the database admin interface
