@@ -28,7 +28,7 @@
 ******************************************************
 5 - Get the database admin interface
 ******************************************************
-- open admin.py from first_app
+- open admin.py from MyApp
 - register your model
 
 ******************************************************
@@ -50,3 +50,4 @@ https://faker.readthedocs.io/en/master/
 ******************************************************
 - first, if not done already, install the faker library
     > pip install Faker
+    > python populate_xxx.py
