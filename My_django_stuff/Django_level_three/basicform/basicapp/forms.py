@@ -11,7 +11,8 @@ class FormName(forms.Form):
     # snoel - to use with a indivitual field validator
     name = forms.CharField(validators=[checkForZ])
     email = forms.EmailField()
-    verify_email = forms.EmailField(label='Enter your email again')
+    #create a second email field to double-check
+    verify_email = forms.EmailField(label='Enter your email again:')
     text = forms.CharField(widget=forms.Textarea)
 
     # By using Django to help us, we only need to do by importing the Django Validator
@@ -19,8 +20,10 @@ class FormName(forms.Form):
                                 widget=forms.HiddenInput,
                                 validators=[validators.MaxLengthValidator(0)])
 
+    #snoel - this will validate the entire form at once
     def clean(self):
         all_clean_data = super().clean()
+        #check if the email is valid
         email = all_clean_data['email']
         vmail = all_clean_data['verify_email']
 
