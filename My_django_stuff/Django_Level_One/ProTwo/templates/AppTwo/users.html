@@ -2,27 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Users</title>
+    <title>Users sign-up form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
   </head>
   <body>
-    <h1>Here are the users: </h1>
-
-    <!-- snoel - first make sure the user_dict was created and the users key exists in the directory -->
-    {% if users %}
-      <ol>
-        <!-- snoel - loop in the users directory "user_dict" which was created in the views.users function -->
-        <!-- here a person represent one element form that user_dict -->
-        {% for person in users %}
-          <li>User Info</li>
-            <ul>
-              <li>First Name: {{ person.FirstName }}</li>
-              <li>Last Name: {{ person.LastName }}</li>
-              <li>Email: {{ person.Email }}</li>
-            </ul>
-        {% endfor %}
-      </ol>
-    {% endif %}
-
-    <h1>End of the user list</h1>
+    <div class="container">
+      <h1>Please sign up here</h1>
+      <form method="POST">
+          {{form.as_p}}
+          {% csrf_token %}
+          <input type="submit" name="btn btn-primary" value="Save">
+      </form>
+    </div>
   </body>
 </html>

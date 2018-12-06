@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+  </head>
+  <body>
+    <h1>Here are the users: </h1>
+
+    <!-- snoel - first make sure the user_dict was created and the users key exists in the directory -->
+    {% if users %}
+      <ol>
+        <!-- snoel - loop in the users directory "user_dict" which was created in the views.users function -->
+        <!-- here a person represent one element form that user_dict -->
+        {% for person in users %}
+          <li>User Info</li>
+            <ul>
+              <li>First Name: {{ person.FirstName }}</li>
+              <li>Last Name: {{ person.LastName }}</li>
+              <li>Email: {{ person.Email }}</li>
+            </ul>
+        {% endfor %}
+      </ol>
+    {% endif %}
+
+    <h1>End of the user list</h1>
+  </body>
+</html>
