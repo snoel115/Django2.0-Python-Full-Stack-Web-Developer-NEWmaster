@@ -15,6 +15,7 @@
         <!-- snoel add django tag -->
         {{form.as_p}}
         <!-- snoel add encryption -->
+        <!-- always use this csrf_token before any post action to ensure the validity / authenticate the post is done by the authenticated user -->
         {% csrf_token %}
         <input type="submit" class="btn btn-primary" value="Save">
       </form>
