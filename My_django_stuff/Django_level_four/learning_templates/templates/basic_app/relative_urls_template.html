@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Welcome to Relative URLs Templates</h1>
+    <!-- snoel - here basic_app is not the folder anymore but the name_app variable defined
+    in the basic_app/urls.py -->
+    <a href="{% url 'basic_app:other' %}">The other page</a><p></p>
+    <a href="{% url 'admin:index' %}">Link to admin</a><p></p>
+    <a href="{% url 'index' %}">Link to index page</a>
+  </body>
+</html>
