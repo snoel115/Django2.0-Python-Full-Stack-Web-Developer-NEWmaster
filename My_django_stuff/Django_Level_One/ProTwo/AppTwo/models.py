@@ -9,4 +9,4 @@ class Users(models.Model):
 
     def __str__(self):
         # return "FN: %s, LN: %s and email: %s".format(self.FirstName, self.LastName, self.Email)
-        return self.FirstName + ", " + self.LastName + " - " + self.Email
+        return self.FirstName + ", " + self.LastName
