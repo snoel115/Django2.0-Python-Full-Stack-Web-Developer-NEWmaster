@@ -1,0 +1,24 @@
+==================================================================
+Prepare your project to receive a proper user authentification
+=================================================================
+- Go in setting.py
+- ensure the INSTALLED_APP valiable contain
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+
+- add the password hashers
+    PASSWORD_HASHERS = [
+        'django.contrib.auth.hashers.Argon2PasswordHasher',
+        'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+        'django.contrib.auth.hashers.BCryptPasswordHasher',
+        'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+        'django.contrib.auth.hashers.PBKDFSHA1PasswordHasher',
+    ]
+
+- add the OPTION in MinimumLenghtValidator section ... pick the lenght you watn
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS':{'min_lenght':9},

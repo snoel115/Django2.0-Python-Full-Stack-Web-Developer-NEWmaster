@@ -1,0 +1,47 @@
+- go in settings.py files
+
+- add under BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+    STATIC_DIR = os.path.join(BASE_DIR, 'static')
+    MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+- ensure the INSTALL_APPS variable contain
+    INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        ....
+        'YOUR APP'
+
+- add the variable TEMPLATE_DIR in the DIRS variable
+    TEMPLATES = [
+        {
+            'DIRS': [TEMPLATE_DIR,
+                    ],
+
+- add this under the password validation section
+    PASSWORD_HASHERS = [
+        'django.contrib.auth.hashers.Argon2PasswordHasher',
+        'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+        'django.contrib.auth.hashers.BCryptPasswordHasher',
+        'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+        'django.contrib.auth.hashers.PBKDFSHA1PasswordHasher',
+    ]
+
+- add the OPTIONS in the MinimumLengthValidator dictionary
+    AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS':{'min_lenght':9},
+    },
+
+- add this under STATIC_URL = '/static/' at the end of the file
+    STATICFILES_DIRS = [STATIC_DIR, ]
+    MEDIA_ROOT = MEDIA_DIR
+    MEDIA_URL = '/media/'
+
+
+- create new folders under the site folder
+    media
+    static
+    templates
